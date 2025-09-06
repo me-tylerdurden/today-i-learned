@@ -1,0 +1,33 @@
+# Two Sum - HashMap approach beats brute force
+
+**Problem:** Find two numbers in array that sum to target.
+
+**Brute force** (O(n²)):
+```python
+def two_sum_brute(nums, target):
+    for i in range(len(nums)):
+        for j in range(i + 1, len(nums)):
+            if nums[i] + nums[j] == target:
+                return [i, j]
+
+def two_sum(nums, target):
+    seen = {}
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in seen:
+            return [seen[complement], i]
+        seen[num] = i
+
+
+**3. Save and exit nano** (`Ctrl+X`, `Y`, `Enter`)
+
+**4. Update your README:**
+```bash
+nano README.md
+
+# Today I Learned
+
+## Recent Entries
+- **2024-09-06** - [Two Sum HashMap approach](programming/algorithms/two-sum-hashmap.md)
+
+Total TILs: 1
